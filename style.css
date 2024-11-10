@@ -1,0 +1,265 @@
+*{
+  box-sizing: border-box;
+
+}
+body{
+  margin: 0px;
+  background-color: #CAD2C5;
+  background-repeat: no-repeat;
+}
+
+header{
+  margin: 0px;
+  padding: 5px;
+  background-color: #52796F ;
+  font-family: Agdasima;
+}
+nav{
+  text-align: center;
+  background-color: #84A98C;
+  border: 0px;
+}
+nav a {
+   margin: 20px 10px;
+   display: inline-block;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.grid-container {
+  display: grid;  /* グリッドレイアウトを使用 */
+  /* grid-template-columns: 3fr, 7fr;  */
+  grid-template-columns: minmax(100px, 3fr) minmax(200px, 7fr);
+  gap: 10px;  /* コンテンツ間の隙間 */
+  margin: 20px;
+}
+
+.card {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.photo-container {
+  display: flex;  /* フレックスボックスで左右に分ける */
+  justify-content: flex-start;  /* 左右にスペースを分ける */
+  align-items: center;  /* コンテンツの縦方向の整列 */
+  margin: 0;
+}
+
+.about-me {
+  background-color: #ffffff;  /* About meの背景色を白に */
+  padding: 20px;  /* 内側に余白を追加 */
+  border-radius: 8px;  /* 角を丸くする */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);  /* 少し影をつける */
+}
+
+@media (max-width: 1000px) {
+  .grid-container {
+    grid-template-columns: 1fr;  /* 1列に変更 */
+    gap: 20px; /* ギャップを広げて調整 */
+  }
+  .photo-container img {
+      width: 80%; /* 画像のサイズも調整 */
+  }
+}
+
+
+
+footer{
+  background-color: #354F52;
+  color: #b8b5b5;
+  text-align: center;
+  padding: 8px;
+  
+}
+.bar-container {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+  overflow: hidden;
+  max-width: 80%;
+}
+
+/* バーのスタイル */
+.bar {
+  height: 30px;
+  background-color: #1cac9e;
+  color: white;
+  text-align: right;
+  padding-right: 10px;
+  line-height: 30px;
+  border-radius: 15px;
+  width: 0;
+  /* アニメーション設定 */
+  animation: grow 2s ease forwards;
+  
+}
+
+/* 各バーの幅 */
+.bar-80 {
+  --target-width: 80%;
+}
+
+.bar-75 {
+  --target-width: 75%;
+}
+
+.bar-60 {
+  --target-width: 60%;
+}
+@keyframes grow {
+  from {
+      width: 0;
+  }
+  to {
+      width: var(--target-width);
+  }
+}
+
+
+.gradient-bar1 {
+  background: linear-gradient(to bottom, #eb6746, #e8d123); 
+  width: 5px; /* 縦棒の幅 */
+  height: 7vh; /* 画面全体の高さ */
+  margin-right: 10px;
+}
+
+.gradient-bar2 {
+  background: linear-gradient(to bottom, #dae330, #11a3c8); /* 紫系のグラデーション */
+  width: 5px; /* 縦棒の幅 */
+  height: 7vh; /* 画面全体の高さ */
+  margin-right: 10px;
+}
+
+.gradient-bar3 {
+  background: linear-gradient(to bottom, #00c6ff, #6d18c8); /* 青系のグラデーション */
+  width: 5px; /* 縦棒の幅 */
+  height: 7vh; /* 画面全体の高さ */
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: center; /* 縦棒と文字を中央揃え */
+  margin: 40px 0;
+  
+}
+.open-modal-btn {
+  align-items: right;
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #5890b0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+/* モーダルの基本スタイル */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明の黒背景 */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.modal:target {
+  display: flex;
+}
+/* モーダル内の画像 */
+.modal-content {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: #fff;
+  z-index: 2; 
+  text-decoration: none;
+}
+
+
+
+.contact_icon{
+  text-align: left;
+  margin: 20px;
+}
+.contact_icon a {
+  display: inline-block;
+  transition: transform 0.2s; /* 拡大時のアニメーションを設定 */
+}
+
+.contact_icon a:hover {
+  transform: scale(1.2); /* ホバー時に1.2倍に拡大 */
+}
+
+.contact_icon a:active {
+  transform: scale(1); /* クリック時に元のサイズに戻す */
+}
+button {
+  background-color: #158c8a; /* ボタンの背景色 */
+  color: white; /* 文字色 */
+  padding: 10px 20px; /* ボタンの内側の余白 */
+  border: none; /* 枠線をなくす */
+  border-radius: 20px; /* 角を丸くする */
+  font-size: 16px; /* フォントサイズ */
+  cursor: pointer; /* マウスオーバー時にカーソルをポインターに */
+  transition: background-color 0.3s,transform 0.2s; /* 背景色の変化にアニメーションを追加 */
+}
+
+button:hover {
+  transform: scale(1.05); /* ホバー時に背景色を変更 */
+}
+
+button:active {
+  background-color: #3e8e41; /* クリック時に背景色を変更 */
+  transform: scale(1);
+}
+.github_button {
+  width: 140px;
+  background-color: #24292f; /* GitHubボタンの背景色 */
+  color: white; /* 文字色 */
+  padding: 10px 20px; /* ボタンの内側の余白 */
+  border: 1px solid #6e767d; /* 枠線を追加 */
+  border-radius: 20px; /* 角を丸くする */
+  font-size: 16px; /* フォントサイズ */
+  cursor: pointer; /* マウスオーバー時にカーソルをポインターに */
+  transition: background-color 0.3s, transform 0.2s; /* 背景色の変化とホバー時のズームアニメーション */
+}
+
+.github_button:hover {
+  transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+.github_button:active {
+  background-color: #181a1b; /* クリック時に背景色を変更 */
+  transform: scale(1); /* クリック時に拡大を戻す */
+}
+a:hover{
+  transform: scale(1.05);
+}
+a:active{
+  transform: scale(1);
+}
